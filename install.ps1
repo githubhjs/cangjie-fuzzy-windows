@@ -11,6 +11,8 @@ param(
   [switch]$Cangjie5,
   [switch]$NoDeploy,
   [switch]$NoModel,
+  [switch]$NoSweep,
+  [string]$PadRef = '',
   [switch]$Offline,
   [switch]$DryRun,
   [switch]$SkipWeaselInstall,
@@ -19,8 +21,8 @@ param(
   [string]$WeaselDir = ''
 )
 $BaseRepo = 'githubhjs/cangjie-fluency'
-$BaseRef = 'v0.5.1'          # pinned by make-release.ps1 / make-release.sh
-$BaseSha = 'c3c38d23f80bc5e9f26c16852c5f00f47a995ed36d414da7c0257003aa2d5773'      # SHA-256 of install.ps1 at $BaseRef
+$BaseRef = 'v0.6.0'          # pinned by make-release.ps1 / make-release.sh
+$BaseSha = '72e03a75d3c00733a8346bc8e687adadc6f290ca7f81e3617eef9f121b7519ad'      # SHA-256 of install.ps1 at $BaseRef
 
 function Say($m, $zhm) { Write-Host "[cangjie-fuzzy-windows] $m"; if ($zhm) { Write-Host ("[cangjie-fuzzy-windows] " + [regex]::Unescape($zhm)) } }
 function Get-Sha256Hex($path) {
@@ -36,6 +38,8 @@ function Get-Sha256Hex($path) {
     if ($Cangjie5) { $p['Cangjie5'] = $true }
     if ($NoDeploy) { $p['NoDeploy'] = $true }
     if ($NoModel) { $p['NoModel'] = $true }
+    if ($NoSweep) { $p['NoSweep'] = $true }
+    if ($PadRef) { $p['PadRef'] = $PadRef }
     if ($Offline) { $p['Offline'] = $true }
     if ($DryRun) { $p['DryRun'] = $true }
     if ($SkipWeaselInstall) { $p['SkipWeaselInstall'] = $true }

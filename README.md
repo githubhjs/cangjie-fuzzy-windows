@@ -23,7 +23,9 @@ irm https://raw.githubusercontent.com/githubhjs/cangjie-fuzzy-windows/main/insta
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/githubhjs/cangjie-fuzzy-windows/main/install.ps1))) -Cangjie5 -FuzzyRange wide
 ```
 
-選項：`-Cangjie5` 也裝五代（同樣有容錯版）· `-FuzzyRange narrow|normal|wide` 範圍 · `-NoDeploy` 不部署 · `-NoModel` 不裝語言模型 · `-Offline` 只用隨附檔案 · `-DryRun` 只顯示會做什麼 · `-SkipWeaselInstall`
+選項：`-Cangjie5` 也裝五代（同樣有容錯版）· `-FuzzyRange narrow|normal|wide` 範圍 · `-NoDeploy` 不部署 · `-NoModel` 不裝語言模型 · `-NoSweep` 不安裝滑行面板 · `-PadRef <tag>` 滑行面板版本 · `-Offline` 只用隨附檔案 · `-DryRun` 只顯示會做什麼 · `-SkipWeaselInstall`
+
+隨附「倉頡滑行輸入面板」（Cangjie Sweep Pad）：預設會一併安裝至 `%LOCALAPPDATA%\cangjie-sweep`，並在「開始」功能表建立「Cangjie Sweep 倉頡滑行」捷徑與 `cangjie-sweep.bat` 啟動檔。需要 Python 3.8+ 及 tkinter（`winget install Python.Python.3.12`）；若未安裝 Python，基礎方案安裝仍會成功。注意：在目標應用程式中輸入時，小狼毫（Weasel）必須是作用中的輸入法。可用 `-NoSweep` 略過安裝。
 
 離線：下載 release 的 `-full.zip`，解開後執行 `install.bat`（需要時加參數，例如 `install.bat -Cangjie5`）。
 
@@ -69,7 +71,9 @@ With options (for example 5th generation, a wider tolerance range):
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/githubhjs/cangjie-fuzzy-windows/main/install.ps1))) -Cangjie5 -FuzzyRange wide
 ```
 
-Options: `-Cangjie5` also install 5th generation (with its typo-tolerant version) · `-FuzzyRange narrow|normal|wide` range · `-NoDeploy` · `-NoModel` skip the language model · `-Offline` bundle files only · `-DryRun` · `-SkipWeaselInstall`
+Options: `-Cangjie5` also install 5th generation (with its typo-tolerant version) · `-FuzzyRange narrow|normal|wide` range · `-NoDeploy` · `-NoModel` skip the language model · `-NoSweep` skip the Sweep Pad · `-PadRef <tag>` Sweep Pad release tag · `-Offline` bundle files only · `-DryRun` · `-SkipWeaselInstall`
+
+Includes the "Cangjie Sweep Pad" (mouse/touch glide typing): installed by default to `%LOCALAPPDATA%\cangjie-sweep` with a Start Menu shortcut "Cangjie Sweep 倉頡滑行" and a `cangjie-sweep.bat` launcher. Requires Python 3.8+ with tkinter (`winget install Python.Python.3.12`); if Python is missing, the Rime schema installation still succeeds. Note: Weasel must be the active IME in the target application. Pass `-NoSweep` to skip installing the pad.
 
 Offline: download the release `-full.zip`, unpack it and run `install.bat` (add options if needed, e.g. `install.bat -Cangjie5`).
 
@@ -94,3 +98,7 @@ Verified:
 ### Licence
 
 Our own files are MIT. The bundled tables, word list and language model are LGPL-3.0 data, shipped unchanged with the licence texts in the base project; see githubhjs/cangjie-fluency.
+
+## Changelog / 更新紀錄
+
+- **v0.2.0** — Sweep Pad added (base cangjie-fluency v0.6.0); default on, `-NoSweep` to skip. / 新增倉頡滑行輸入板（基礎安裝程式 cangjie-fluency v0.6.0）；預設安裝，加 `-NoSweep` 可略過。
