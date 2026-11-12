@@ -101,6 +101,7 @@ Our own files are MIT. The bundled tables, word list and language model are LGPL
 
 ## Changelog / 更新紀錄
 
+- **v0.2.3** — Sweep Pad v0.4.1: candidate row no longer resizes, the sweep trail stays visible. / 滑行輸入板 v0.4.1：候選列不再變高，滑行軌跡不會消失。
 - **v0.2.2** — Sweep Pad v0.4.0: single-character backtrack slips decode correctly (decode_auto), word floor 1000. / 滑行輸入板 v0.4.0：單字回頭滑行也能正確解碼（decode_auto），詞頻下限 1000。
 - **v0.2.1** — Sweep Pad v0.3.0: tolerance for backtracks. / 滑行輸入板 v0.3.0：容許回頭滑行。
 - **v0.2.0** — Sweep Pad added (base cangjie-fluency v0.6.0); default on, `-NoSweep` to skip. / 新增倉頡滑行輸入板（基礎安裝程式 cangjie-fluency v0.6.0）；預設安裝，加 `-NoSweep` 可略過。
