@@ -101,6 +101,7 @@ Our own files are MIT. The bundled tables, word list and language model are LGPL
 
 ## Changelog / 更新紀錄
 
+- **v0.2.4** — Sweep Pad v0.5.0: optional `--mode commit` types the clicked candidate (Linux/macOS), default unchanged. / 滑行輸入板 v0.5.0：可選的 `--mode commit` 會直接輸入點選的候選字（Linux/macOS），預設行為不變。
 - **v0.2.3** — Sweep Pad v0.4.1: candidate row no longer resizes, the sweep trail stays visible. / 滑行輸入板 v0.4.1：候選列不再變高，滑行軌跡不會消失。
 - **v0.2.2** — Sweep Pad v0.4.0: single-character backtrack slips decode correctly (decode_auto), word floor 1000. / 滑行輸入板 v0.4.0：單字回頭滑行也能正確解碼（decode_auto），詞頻下限 1000。
 - **v0.2.1** — Sweep Pad v0.3.0: tolerance for backtracks. / 滑行輸入板 v0.3.0：容許回頭滑行。
