@@ -21,8 +21,8 @@ param(
   [string]$WeaselDir = ''
 )
 $BaseRepo = 'githubhjs/cangjie-fluency'
-$BaseRef = 'v0.6.1'          # pinned by make-release.ps1 / make-release.sh
-$BaseSha = '913bec96be17e867b4d8c1e7cbc932b149bf452810b4e1059e5ac5b46e366e08'      # SHA-256 of install.ps1 at $BaseRef
+$BaseRef = 'v0.6.2'          # pinned by make-release.ps1 / make-release.sh
+$BaseSha = '83397640e6d5cb70bd021e2c27f4541d400dba56fe96bc9350104ab8c1a688c4'      # SHA-256 of install.ps1 at $BaseRef
 
 function Say($m, $zhm) { Write-Host "[cangjie-fuzzy-windows] $m"; if ($zhm) { Write-Host ("[cangjie-fuzzy-windows] " + [regex]::Unescape($zhm)) } }
 function Get-Sha256Hex($path) {
